@@ -34,6 +34,21 @@ li {
 
 /* hd--------- */
 
+header>div .top,
+header>div .left {
+    position: fixed;
+}
+
+.scroll_point {
+    position: absolute;
+    bottom: -100px;
+}
+
+.scroll_point>div {
+    height: 150px;
+    border-left: 0.4px solid gray;
+}
+
 nav ul {
     position: fixed;
     top: 350px;
@@ -43,7 +58,7 @@ nav ul {
 
 nav ul li {
     margin: 10px 0px;
-    text-align: right;
+    text-align: left;
     color: rgb(199, 199, 199);
     transition: all 0.6s;
 }
@@ -68,7 +83,7 @@ nav ul li {
 .cont_1 h2 {
     font-size: 20pt;
     margin-bottom: 20px;
-    letter-spacing: -1.4px;
+    letter-spacing: -3px;
     font-weight: lighter;
 }
 
@@ -172,6 +187,35 @@ nav ul li:hover {
     height: 100vh;
 }
 
+.skill_btn {
+    position: relative;
+    top: 160px;
+    left: 160px;
+}
+
+.skill_btn ul li {
+    float: left;
+    margin: 0px 10px;
+}
+
+.skill_btn ul li div {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(206, 206, 206);
+    transform: rotate(45deg);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.s_line {
+    width: 150px;
+    border-top: 1px solid gray;
+    position: relative;
+    top: 50%;
+    left: -200px;
+    transform: translateY(-50%);
+}
+
 .skill_window {
     width: 500px;
     height: 650px;
@@ -179,7 +223,7 @@ nav ul li:hover {
     /* border: 1px solid red; */
     position: relative;
     top: 200px;
-    left: 100px;
+    left: 20px;
     overflow: hidden;
     float: left;
 }
@@ -187,6 +231,9 @@ nav ul li:hover {
 .skill_all {
     width: 200%;
     font-size: 36pt;
+    position: absolute;
+    left: 0;
+    transition: all 0.6s;
 }
 
 .skill_all .skill_1,
@@ -225,11 +272,12 @@ nav ul li:hover {
 .skill_cont {
     width: 200px;
     height: 250px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     position: relative;
-    top: 340px;
-    left: 310px;
+    top: 380px;
+    left: 180px;
     float: left;
+    text-align: center;
 }
 
 .skill_cont>ul>li {
@@ -243,29 +291,103 @@ nav ul li:hover {
     font-size: 12pt;
 }
 
+.skill_btn ul li div:hover {
+    background-color: rgb(153, 153, 153);
+    transform: rotate(225deg);
+}
+
 /* web------ */
 
 .web_cont {
     height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
 .web_cont .web_cont_all {
     position: relative;
     top: 0;
+    transition: all 1s;
 }
 
-.web_cont .web_cont_all>div {
+.web_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.web_btn .web_top {
+    transform: rotate(45deg);
+    margin-bottom: 600px;
+    position: relative;
+    top: 0;
+}
+
+.web_btn .web_bottom {
+    transform: rotate(-135deg);
+    position: relative;
+    top: 0;
+}
+
+.web_btn .web_top,
+.web_btn .web_bottom {
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid rgb(202, 202, 202);
+    border-left: 1px solid rgb(202, 202, 202);
+    transition: all 0.4s;
+}
+
+.web_cont .web_cont_all button {
+    position: relative;
+    top: 80px;
+    width: 80px;
+    height: 30px;
+    font-size: 12pt;
+    border: 0;
+    border-top: 0.1px solid gray;
+    border-left: 0.1px solid gray;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    background-color: white;
+}
+
+.web_cont .web_cont_all .web_slide_1,
+.web_cont .web_cont_all .web_slide_2,
+.web_cont .web_cont_all .web_slide_3 {
     height: 100vh;
     padding: 100px 160px;
     box-sizing: border-box;
 }
 
-.web_cont .web_cont_all .web_slide {
-    background-color: khaki;
+.web_cont .web_cont_all .web_slide_1 h1,
+.web_cont .web_cont_all .web_slide_2 h1,
+.web_cont .web_cont_all .web_slide_3 h1 {
+    font-weight: normal;
+    margin-bottom: 12px;
+    letter-spacing: -2.4pt;
 }
 
-.web_cont .web_cont_all .web_slide>div:nth-child(1) {
+.web_cont .web_cont_all .web_slide_1 h3,
+.web_cont .web_cont_all .web_slide_2 h3,
+.web_cont .web_cont_all .web_slide_3 h3 {
+    font-weight: lighter;
+    font-size: 11pt;
+    margin-bottom: 40px;
+}
+
+.web_cont .web_cont_all .web_slide_1 p,
+.web_cont .web_cont_all .web_slide_2 p,
+.web_cont .web_cont_all .web_slide_3 p {
+    font-weight: lighter;
+    font-size: 11pt;
+}
+
+.web_cont .web_cont_all .web_slide_1>div:nth-child(1),
+.web_cont .web_cont_all .web_slide_2>div:nth-child(1),
+.web_cont .web_cont_all .web_slide_3>div:nth-child(1) {
     width: 700px;
     height: 450px;
     /* background-color: fuchsia; */
@@ -275,36 +397,25 @@ nav ul li:hover {
     transform: translateY(-50%);
     float: left;
     overflow: hidden;
+    box-shadow: 0px 0px 26px rgb(230, 230, 230);
 }
 
-.web_cont .web_cont_all .web_slide>div:first-child img {
-    display: block;
+.web_cont .web_cont_all .web_slide_1>div:first-child img,
+.web_cont .web_cont_all .web_slide_2>div:first-child img,
+.web_cont .web_cont_all .web_slide_3>div:first-child img {
     position: absolute;
     width: 100%;
-    height: 450px;
 }
 
-.web_cont .web_cont_all .web_slide>div:first-child img:nth-child(1) {
-    background-color: aqua;
-
-}
-
-.web_cont .web_cont_all .web_slide>div:first-child img:nth-child(2) {
-    background-color: rgb(0, 136, 106);
-}
-
-.web_cont .web_cont_all .web_slide>div:first-child img:nth-child(3) {
-    background-color: rgb(0, 102, 255);
-
-}
-
-.web_cont .web_cont_all>div:nth-child(1)>div:nth-child(2) {
+.web_cont .web_cont_all>div:nth-child(1)>div:nth-child(2),
+.web_cont .web_cont_all>div:nth-child(2)>div:nth-child(2),
+.web_cont .web_cont_all>div:nth-child(3)>div:nth-child(2) {
     width: 250px;
     height: 200px;
-    border: 1px solid red;
-    position: absolute;
-    top: 400px;
-    right: 450px;
+    /* border: 1px solid red; */
+    position: relative;
+    top: 340px;
+    right: -340px;
     transform: translateY(-50%);
     float: left;
 }
@@ -317,13 +428,25 @@ nav ul li:hover {
     font-size: 18pt;
 }
 
-.web_cont .web_cont_all>div:nth-child(2) {
-    background-color: pink;
+.web_btn .web_top:hover {
+    border-top: 1px solid rgb(83, 83, 83);
+    border-left: 1px solid rgb(83, 83, 83);
+    top: -10px;
 }
 
-.web_cont .web_cont_all>div:nth-child(3) {
-    background-color: firebrick;
+.web_btn .web_bottom:hover {
+    border-top: 1px solid rgb(83, 83, 83);
+    border-left: 1px solid rgb(83, 83, 83);
+    top: 10px;
 }
+
+/* .web_cont .web_cont_all>div:nth-child(2) {
+    background-color: pink;
+} */
+
+/* .web_cont .web_cont_all>div:nth-child(3) {
+    background-color: firebrick;
+} */
 
 /* edit------- */
 /* es_1 */
@@ -561,6 +684,8 @@ footer {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: none;
+    transition: all 0.4s;
 }
 
 .line_1 {
